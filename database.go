@@ -55,7 +55,7 @@ func (config *MySQL) initializeMySql() {
 
 func (config *MySQL) initializeSqLite(storageDir string) {
 	var err error
-	absPath := storageDir + "config.sqlite"
+	absPath := storageDir + "db.sqlite"
 	config.ORM, err = gorm.Open(sqlite.Open(absPath), &gorm.Config{})
 	if err != nil {
 		logrus.WithField("error", err).Fatal("Failed to open database")
