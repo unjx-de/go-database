@@ -18,7 +18,7 @@ type MySQL struct {
 	ORM      *gorm.DB
 }
 
-func (config *MySQL) migrateHelper(i interface{}, name string) {
+func (config *MySQL) MigrateHelper(i interface{}, name string) {
 	err := config.ORM.AutoMigrate(i)
 	if err != nil {
 		logrus.WithField("error", err).Fatalf("Failed to migrate %s", name)
